@@ -1,0 +1,332 @@
+.item-annoucement {
+  position: relative;
+
+  @include min-large-tablet {
+    .tablet-visible {
+      display: none;
+    }
+  }
+
+  @include large-tablet {
+    .tablet-hidden {
+      display: none;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    @include items(2, 15);
+
+    @include large-tablet {
+      flex-wrap: wrap;
+      position: relative;
+      margin: 0;
+    }
+  }
+
+  &__column {
+    &_left {
+      display: flex;
+    }
+
+    &_right {
+      max-width: 600rem;
+    }
+
+    @include small-desktop {
+      &_left {
+        width: calc(60% - 30rem);
+      }
+      &_right {
+        width: calc(40% - 30rem);
+      }
+    }
+
+    @include large-tablet {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    overflow: hidden;
+    width: 226rem;
+    height: 172rem;
+    border-radius: 10rem;
+    margin-right: 20rem;
+    flex-shrink: 0;
+
+    @include large-tablet {
+      height: 175rem;
+    }
+    @include small-tablet {
+      width: 175rem;
+    }
+
+    @include large-mobile {
+      width: 108rem;
+      height: 111rem;
+      margin-right: 13rem;
+    }
+  }
+
+  &__info {
+    padding-top: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include large-tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__name {
+    position: relative;
+    height: 24rem;
+
+    @include large-tablet {
+      height: auto;
+    }
+  }
+
+  &__title {
+    font-family: "Gilroy";
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    @include large-tablet {
+      padding-right: 50rem;
+      position: static;
+      overflow: visible;
+      white-space: inherit;
+      height: auto;
+    }
+    &:hover {
+      color: $default;
+    }
+  }
+
+  &__desc {
+    margin-top: 10rem;
+    font-weight: 500;
+
+    .color-gray {
+      color: #9a9a9a;
+    }
+
+    @include large-mobile {
+      font-size: 12rem;
+    }
+  }
+
+  &__text {
+    &:not(:first-child) {
+      margin-top: 5rem;
+    }
+  }
+
+  &__distance {
+    margin-top: 15rem;
+
+    @include large-tablet {
+      display: none;
+    }
+  }
+
+  &__days {
+    display: inline-flex;
+    background: #f4f3f4;
+    border-radius: 3px;
+    padding: 4rem 6rem;
+    margin-top: 10rem;
+    width: fit-content;
+    @include large-mobile {
+      font-size: 12rem;
+      line-height: 1;
+    }
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  &__date {
+    margin-top: 10rem;
+    @include large-tablet {
+      display: none;
+    }
+  }
+
+  &__nav {
+    margin-top: 35rem;
+    flex: 1 1 auto;
+    align-items: flex-end;
+    .button-medium_white {
+      padding: 0 10px !important;
+    }
+
+    &-btn {
+      &:not(:last-child) {
+        margin-right: 20rem;
+        padding: 0 15rem;
+      }
+    }
+
+    @include large-tablet {
+      display: none;
+    }
+  }
+
+  &__price {
+    padding-top: 3rem;
+    font-size: 24rem;
+    line-height: 1;
+    text-align: right;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    @include large-tablet {
+      text-align: left;
+      padding-top: 0;
+      margin-top: 10rem;
+    }
+
+    @include large-mobile {
+      margin-top: 8rem;
+      font-size: 15rem;
+    }
+  }
+
+  &__statistic {
+    margin-top: 20rem;
+
+    @include large-tablet {
+      margin-top: 10rem;
+    }
+  }
+
+  &__bottom {
+    margin-top: 30rem;
+    @include large-tablet {
+      margin-top: 0;
+    }
+
+    &-column-inner {
+      margin: -10px;
+
+      .button-medium {
+        &:hover {
+          background: none;
+          color: $blue;
+        }
+      }
+    }
+
+    @include large-mobile {
+      .button-medium_square {
+        margin-top: 7px;
+        margin-right: 5px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  &__more {
+    margin-left: 6rem;
+
+    &-inner {
+      &__mobile {
+        @include large-tablet {
+          position: absolute;
+          right: 0;
+          top: 10rem;
+        }
+        @include min-large-tablet {
+          display: none;
+          background: #fff;
+          border: 0;
+          right: -10rem;
+          top: -12rem;
+        }
+      }
+      @include large-tablet {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 10rem;
+      }
+      @include large-mobile {
+        background: #fff;
+        border: 0;
+        right: -10rem;
+        top: -12rem;
+      }
+    }
+
+    @include large-tablet {
+      margin-left: 0;
+    }
+    @include large-mobile {
+      border: 0;
+    }
+  }
+
+  &__status {
+    display: inline-flex;
+    height: 20rem;
+    padding: 0 7rem;
+    background: #f4f3f4;
+    border-radius: 3px;
+    color: $gray;
+    @include large-mobile {
+      font-size: 12rem;
+    }
+  }
+
+  &__statistic {
+    .statistic__item {
+      @include large-tablet() {
+        padding-right: 5px !important;
+      }
+    }
+  }
+  &__status {
+    position: absolute;
+    z-index: 1;
+    left: 10rem;
+    top: 10rem;
+    height: 30rem;
+    background: #ff664a;
+    border-radius: 7rem;
+    padding: 0 10rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: normal;
+    transition: ease 0.12s;
+    @include large-mobile {
+      height: 20rem;
+      padding: 0 6rem;
+      font-size: 10rem;
+    }
+  }
+
+  &__footer {
+    margin-top: 14rem;
+    @include large-mobile {
+      &-date {
+        font-size: 12rem;
+      }
+    }
+  }
+}

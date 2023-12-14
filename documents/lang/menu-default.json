@@ -1,0 +1,75 @@
+{
+  "menu": [
+    {
+      "label": "Auth List",
+      "items": [
+        {
+          "label": "Registration ",
+          "text": "Registration ",
+          "to": "/auth/registration"
+        },
+        { "label": "Log in", "text": "Log in", "to": "#", "loginModal": true }
+      ]
+    },
+    {
+      "label": "Menu List",
+      "items": [
+        {
+          "label": "Contacts",
+          "text": "Contacts",
+          "to": "/contacts",
+          "loginModal": false
+        },
+        {
+          "label": "Support",
+          "text": "Support",
+          "to": "/support",
+          "loginModal": false
+        }
+      ]
+    }
+  ],
+  "menu1": [
+    {
+      "label": "List",
+      "items": [
+        {
+          "label": " My advertises",
+          "text": " My advertises",
+          "to": "/announcements"
+        },
+        {
+          "label": "Creat advertise",
+          "text": "Creat advertise",
+          "to": "/create-ad"
+        },
+        {
+          "label": "Favorite ads",
+          "text": "Favorite ads",
+          "to": "/favorites-ad"
+        }
+      ]
+    },
+    {
+      "label": "List",
+      "items": [
+        { "label": "Chat", "text": "Chat", "to": "/chat" },
+        {
+          "label": "Notifications",
+          "text": "Notifications",
+          "to": "/notifications"
+        },
+        { "label": "Setting", "text": "Settings", "to": "/settings" }
+      ]
+    },
+    {
+      "label": "List",
+      "items": [
+        { "label": "Support", "text": "Support", "to": "/support" },
+        { "label": "Contacts", "text": "Contacts", "to": "/contacts" }
+      ]
+    }
+  ],
+  "lang": "Language change",
+  "exit": "Exit"
+}

@@ -1,0 +1,498 @@
+:root {
+  --app-height: 100%;
+  --wrapper-offset: 40px;
+
+  @include large-tablet {
+    --wrapper-offset: 32px;
+    // 	--global-size: #{100/ (1120/0.7)}vw;
+  }
+
+  @include large-mobile {
+    --wrapper-offset: 15rem;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.wrap {
+  padding: 0 var(--wrapper-offset);
+  max-width: 1480px;
+  margin: auto;
+  position: relative;
+
+  @include large-desktop {
+    max-width: 1200px; //1280px;
+  }
+}
+
+html {
+  font-size: 1px;
+
+  &.js-lock {
+    overflow: hidden;
+    margin-right: 15px;
+  }
+
+  @include large-desktop {
+    font-size: 0.9px;
+  }
+  // @include min-large-desktop {
+  // 	font-size: 1px;
+  // }
+
+  @include large-tablet {
+    // font-size: 0.8px;
+
+    &.js-lock {
+      margin-right: 0;
+    }
+  }
+
+  @include large-mobile {
+    font-size: 1px;
+  }
+
+  @include small-mobile {
+    font-size: #{div(100, div(375, 1))}vw;
+  }
+}
+
+body {
+  font-size: 14rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: "Gilroy";
+  color: $default;
+  font-weight: 500;
+  position: relative;
+}
+
+.hidden-h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.container {
+  min-height: 100vh;
+  min-height: var(--app-height);
+  max-width: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  @include small-tablet {
+    &:not(.chat-layout) {
+      min-height: auto;
+    }
+  }
+
+  &.chat-layout {
+    position: relative;
+    min-height: unset;
+    height: 100vh;
+    height: var(--app-height);
+
+    .container__row {
+      height: 100%;
+      height: var(--app-height);
+      position: relative;
+    }
+
+    .container__column {
+      height: 100%;
+      position: relative;
+      padding-bottom: 0;
+    }
+  }
+
+  &__row {
+    min-height: 100vh;
+    min-height: var(--app-height);
+    display: flex;
+  }
+
+  &__inner {
+    max-width: 1500rem;
+    padding-left: 50rem;
+    padding-right: 50rem;
+
+    @include large-desktop {
+      padding-left: 40rem;
+      padding-right: 40rem;
+    }
+
+    @include small-tablet {
+      padding: 0;
+    }
+  }
+
+  &__column {
+    &_left {
+      width: 210rem;
+      min-width: 210rem;
+      background: #f4f3f4;
+      display: flex;
+      position: relative;
+    }
+
+    &_right {
+      width: calc(100% - 210rem);
+      display: flex;
+      flex-direction: column;
+
+      .main {
+        max-width: 1500rem;
+        padding-left: 50rem;
+        padding-right: 50rem;
+      }
+    }
+
+    @include large-desktop {
+      &_right {
+        width: calc(100% - 210rem);
+
+        .main {
+          padding-left: 40rem;
+          padding-right: 40rem;
+        }
+      }
+    }
+
+    @include small-tablet {
+      &_left {
+        display: none;
+      }
+      &_right {
+        padding-left: 0;
+        padding-right: 0;
+        padding: 0 var(--wrapper-offset);
+        width: 100%;
+
+        .main {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  flex: 1 1 auto;
+  position: relative;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+button {
+  font: inherit;
+}
+
+main {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration-skip-ink: none;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.inline {
+  font-size: 0;
+
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.icon {
+  width: 100%;
+}
+
+.clear {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  &__left {
+    float: left;
+  }
+
+  &__right {
+    float: right;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &_inline {
+    display: inline-flex;
+  }
+
+  &_nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &_column {
+    flex-direction: column;
+  }
+
+  &_center {
+    justify-content: center;
+  }
+
+  &_justify {
+    justify-content: space-between;
+  }
+
+  &_left {
+    justify-content: flex-start;
+  }
+
+  &_right {
+    justify-content: flex-end;
+  }
+
+  &_start {
+    align-items: flex-start;
+  }
+
+  &_bottom {
+    align-items: flex-end;
+  }
+
+  &_vertical {
+    align-items: center;
+  }
+}
+
+.css-text-left {
+  text-align: left;
+}
+
+.css-text-center {
+  text-align: center;
+}
+
+.css-text-right {
+  text-align: right;
+}
+
+.row {
+  display: table;
+  width: 100%;
+
+  &_fixed {
+    table-layout: fixed;
+  }
+
+  & > * {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
+.fit-by-content {
+  white-space: nowrap;
+  width: 1%;
+}
+
+img,
+svg {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.object-fit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &-contain {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.css-scrollbar {
+  overflow-y: auto;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(#d2d2d7, 0.3);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $blue;
+  }
+}
+
+.color-gray {
+  color: $gray;
+}
+
+.color-blue {
+  color: $blue;
+}
+
+.color-red {
+  color: $red;
+}
+
+.color-green {
+  color: $green;
+}
+
+.color-brown {
+  color: $brown;
+}
+
+.link {
+  transition: ease 0.15s;
+  font-weight: 600;
+  display: inline-flex;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+.blue-link {
+  display: inline-block;
+  color: $blue;
+  font-weight: 600;
+}
+
+@include min-large-mobile {
+  .mobile-visible {
+    display: none !important;
+  }
+}
+
+@include large-mobile {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+.tablet-hidden {
+  @include small-tablet {
+    display: none !important;
+  }
+}
+
+.min-tablet-hidden {
+  @include min-small-tablet {
+    display: none !important;
+  }
+}
+
+.max-tablet-hidden {
+  @include min-large-tablet {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  @include large-tablet {
+    display: none !important;
+  }
+}
+
+.button-photo__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.d-none {
+  display: none;
+}
+
+.text-wrap {
+  overflow-wrap: anywhere;
+}
+
+.admin, .chat-layout {
+  .header_back {
+    padding: 0;
+    height: auto;
+    @include large-mobile {
+      // height: 57px;
+      padding: 10px 0;
+    }
+  }
+}
+
+@include min-large-mobile {
+  .back-nav__list {
+    min-height: 30px;
+  }
+}
+
+@include large-mobile(1) {
+  .mobile-menu-showed-dialog {
+    top: -42rem
+  }
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

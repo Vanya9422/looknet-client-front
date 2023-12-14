@@ -1,0 +1,13 @@
+{
+  "title": "Password recovery",
+  "description": "Enter the email address you used when you joined and weu2019ll send you instructions to reset your password.",
+  "email": {
+    "label": "Phone or mail",
+    "placeholder": "Enter your phone number or email",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "button": "Send",
+  "text": "Do you already have a profile?",
+  "link": "Log in"
+}

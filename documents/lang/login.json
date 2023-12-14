@@ -1,0 +1,10 @@
+{
+  "loginWith": "Login with",
+  "username": { "placeholder": "Enter the login" },
+  "password": { "placeholder": "Enter the password" },
+  "registration": "Registration",
+  "login": "Login",
+  "sing": "Sign in",
+  "forget": "Forgot password?",
+  "errorForbidden": "Your account has been blocked by an administrator"
+}

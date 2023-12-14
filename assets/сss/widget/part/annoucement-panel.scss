@@ -1,0 +1,53 @@
+.annoucement-panel {
+  background: $blue;
+  color: #fff;
+  padding: 20rem 30rem;
+  border-radius: 10rem;
+  position: sticky;
+  bottom: 30rem;
+  margin-left: -20rem;
+  margin-right: -20rem;
+
+  @include small-tablet {
+    bottom: 60rem;
+  }
+
+  @include large-mobile {
+    padding: 13rem;
+    border-radius: 15rem;
+  }
+
+  &__btn {
+    //&:not(:first-child) {
+    //  margin-left: 15rem;
+    //}
+
+    @include large-tablet {
+      &:not(:first-child) {
+        margin-left: 10rem;
+      }
+    }
+  }
+  &__cancel {
+    margin-left: 30rem;
+
+    @include large-tablet {
+      margin-left: 10rem;
+    }
+  }
+
+  &__checkbox {
+    @include large-mobile {
+      strong {
+        font-weight: 600;
+      }
+      .p {
+        font-size: 14rem;
+      }
+    }
+  }
+
+  &__action {
+    margin-bottom: 2px;
+  }
+}

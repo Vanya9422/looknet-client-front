@@ -1,0 +1,12 @@
+@import "variables";
+
+.tippy-tooltip {
+  &.danger-theme {
+    border: 1px solid $red;
+    color: $red;
+    .tippy-roundarrow {
+      stroke: $red;
+    }
+  }
+}
+

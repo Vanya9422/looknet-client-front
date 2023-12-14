@@ -1,0 +1,122 @@
+.section-contacts {
+  padding-bottom: 100rem;
+  #map{
+    height: 450px;
+  }
+  @include large-mobile {
+    padding-bottom: 50rem;
+    padding-top: 36rem;
+  }
+
+  &__preview {
+    @include large-mobile {
+      margin: 0;
+    }
+    .page-preview {
+      &__img {
+        padding-top: div(550, 1400) * 100%;
+      }
+    }
+
+    @include large-mobile {
+      margin: 0;
+      .page-preview {
+        &__img {
+          display: none;
+        }
+
+        &__title {
+          position: static;
+          top: 0;
+          color: inherit;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  &__row {
+    margin-top: 100rem;
+
+    @include small-tablet {
+      margin-top: 40rem;
+    }
+
+    @include large-mobile {
+      margin-top: 20rem;
+    }
+  }
+
+  &__column {
+    width: 50%;
+
+    &_left {
+      max-width: 600rem;
+      padding-right: 30rem;
+    }
+
+    @include small-tablet {
+      width: 100%;
+      &_left {
+        max-width: none;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__item {
+    padding: 50rem 0;
+    border-top: 1px solid rgba(195, 200, 203, 0.6);
+    padding-right: 10rem;
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include small-tablet {
+      padding: 40rem 0;
+      &:last-child {
+        padding-bottom: 40rem;
+        border-bottom: 1px solid rgba(195, 200, 203, 0.6);
+      }
+    }
+
+    @include large-mobile {
+      &:first-child {
+        border-top: 1px solid rgba(195, 200, 203, 0.6);
+        padding-top: 25rem;
+      }
+    }
+  }
+
+  &__map {
+    &-img {
+      overflow: hidden;
+      position: relative;
+      border-radius: 20rem;
+      margin-top: 37rem;
+    }
+
+    @include small-tablet {
+      margin-top: 40rem;
+    }
+    @include large-mobile {
+      &-img {
+        margin-top: 20rem;
+        //padding-top: div(300, 345) * 100%;
+      }
+    }
+  }
+
+  &__help {
+    margin-top: 100rem;
+    @include large-mobile {
+      margin-top: 50rem;
+    }
+  }
+}

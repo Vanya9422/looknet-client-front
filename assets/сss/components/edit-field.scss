@@ -1,0 +1,148 @@
+.edit-field {
+  &__row {
+    display: flex;
+    align-items: center;
+    min-height: 60rem;
+
+    &:not(:first-child) {
+      margin-top: 15rem;
+    }
+
+    @include large-mobile {
+      min-height: inherit;
+    }
+  }
+
+  &__column {
+    &_left {
+      width: 35%;
+    }
+
+    &_center {
+      width: 45%;
+    }
+
+    &_right {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 130rem;
+    }
+
+    @include large-mobile {
+      &_center {
+        width: 55%;
+      }
+      &_right {
+        min-width: inherit;
+        width: 10%;
+      }
+    }
+  }
+
+  &__placeholder {
+    &-lang {
+      padding-left: 48rem !important;
+      font-family: "Gilroy";
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 330px;
+      @include large-mobile {
+        font-size: 16rem;
+        padding-left: 10px !important;
+      }
+    }
+    padding-left: 20rem;
+    font-family: "Gilroy";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 330px;
+    @include large-mobile {
+      font-size: 16rem;
+      padding-left: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    &-item {
+      padding: 0 20rem;
+
+      &:not(:first-child) {
+        border-left: 1px solid $light-gray;
+      }
+    }
+
+    @include small-desktop {
+      &-item {
+        padding: 0 10rem;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-size: 17rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &.color-gray {
+      color: $dark-gray;
+    }
+
+    @include large-mobile {
+      font-size: 16rem;
+    }
+  }
+
+  @include large-mobile {
+    .mobile-hidden {
+      display: none;
+    }
+  }
+
+  @include min-large-mobile {
+    .mobile-visible {
+      display: none;
+    }
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: $dark-gray;
+    //transition: all 0.3s ;
+    &:hover {
+      fill: $blue;
+    }
+    &-close {
+      stroke: $dark-gray;
+      &:hover {
+        stroke: $red;
+      }
+    }
+    &-checked {
+      stroke: $dark-gray;
+      fill: transparent;
+      &:hover {
+        stroke: $green;
+        fill: transparent;
+      }
+    }
+  }
+}
+
+.user-info_big .user-info__data {
+  @include large-tablet {
+    max-width: calc(100% - 130px);
+  }
+  @include large-mobile {
+    max-width: calc(100% - 80px);
+  }
+}

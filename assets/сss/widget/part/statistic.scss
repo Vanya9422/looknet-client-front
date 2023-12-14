@@ -1,0 +1,149 @@
+.statistic {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &_light {
+    .statistic {
+      &__item {
+        display: flex;
+        flex-direction: column;
+        &:not(:first-child) {
+          &:before {
+            display: none;
+          }
+        }
+      }
+      &__name {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+      }
+      &__number {
+        font-size: 24rem;
+        font-family: "Gilroy";
+        margin-top: 7rem;
+      }
+      &__icon {
+        width: 13rem;
+        height: 13rem;
+        flex-shrink: 0;
+        display: block;
+        margin-right: 7rem;
+        fill: #9a9a9a;
+      }
+    }
+    @include large-mobile {
+      .statistic {
+        &__item {
+          flex-direction: row-reverse;
+          align-items: center;
+        }
+        &__icon {
+          fill: $blue;
+          width: 14rem;
+          height: 14rem;
+          margin-right: 5rem;
+        }
+        &__text {
+          display: none;
+        }
+        &__number {
+          color: $gray;
+          font-size: 14rem;
+          font-weight: 500;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  &__icon {
+    display: none;
+
+    @include large-mobile {
+      width: 13rem;
+      height: 13rem;
+      flex-shrink: 0;
+      display: block;
+      margin-right: 7rem;
+      fill: #9a9a9a;
+    }
+  }
+
+  &__number {
+    font-size: 26rem;
+    font-weight: 600;
+    line-height: 1.2;
+    font-family: "Atyp Display";
+
+    @include large-mobile {
+      font-family: "Gilroy";
+      margin-top: 6rem;
+    }
+  }
+
+  &__name {
+    margin-top: 3rem;
+
+    @include large-mobile {
+      font-size: 14rem;
+      font-weight: 500;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    position: relative;
+    &:not(:first-child) {
+      padding-left: 25rem;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 30rem;
+        width: 1px;
+        background: $light-gray;
+        left: 0;
+        top: 50%;
+        margin-top: -10rem;
+      }
+    }
+    &:not(:last-child) {
+      padding-right: 25rem;
+    }
+
+    @include large-tablet {
+      &:not(:first-child) {
+        padding-left: 20rem;
+      }
+      &:not(:last-child) {
+        padding-right: 20rem;
+      }
+    }
+    @include small-tablet {
+      &:not(:first-child) {
+        padding-left: 35rem;
+      }
+      &:not(:last-child) {
+        padding-right: 35rem;
+      }
+    }
+
+    @include large-mobile {
+      display: flex;
+      flex-direction: column;
+      &:not(:first-child) {
+        padding-left: 25rem;
+        &:before {
+          height: 30rem;
+        }
+      }
+      &:not(:last-child) {
+        padding-right: 25rem;
+      }
+    }
+  }
+}

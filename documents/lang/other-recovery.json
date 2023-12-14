@@ -1,0 +1,12 @@
+{
+  "title": "Password recovery",
+  "description": "Enter your phone number or email",
+  "password": { "label": "New password", "placeholder": "Enter the password" },
+  "rePassword": {
+    "label": "Repeat the password",
+    "placeholder": "Enter the password"
+  },
+  "button": "Send",
+  "text": "Do you already have a profile?",
+  "link": "Log in"
+}

@@ -1,0 +1,120 @@
+.home {
+  .section-categories__wrap {
+    padding-bottom: 20px;
+  }
+}
+
+.section-categories {
+  padding: 45rem 0 140rem;
+  overflow: hidden;
+
+  @include small-tablet {
+    padding-top: 10rem;
+  }
+
+  @include large-mobile {
+    padding: 10rem 0 50rem 0;
+  }
+
+  &__list {
+    padding-top: 5rem;
+    @include items(5, 10);
+
+    @include large-tablet {
+      @include items(4, 10);
+    }
+    @include small-tablet {
+      @include items(3, 10);
+    }
+    @include large-mobile {
+      @include items(2, 5);
+      padding-top: 0;
+    }
+  }
+
+  &__column {
+    margin-top: 20rem;
+    display: flex;
+
+    @include large-mobile {
+      margin-top: 4rem;
+
+      &:nth-last-child(-n+1):not(:nth-child(even)) {
+        width: 100%;
+
+        .card-premium {
+          height: 105rem;
+          overflow: hidden;
+
+          &__wrap {
+            position: static;
+            padding-left: 50%;
+            text-align: left;
+
+            & > * {
+              position: relative;
+            }
+          }
+
+          &__img {
+            position: absolute;
+            left: 0;
+            top: 11rem;
+            width: 50%;
+            text-align: center;
+
+            img {
+              max-height: 135rem;
+            }
+          }
+
+          &__name {
+            font-weight: 600;
+          }
+
+          &__arrow {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    min-height: 100%;
+    width: 100%;
+  }
+
+  &__category {
+    margin-top: 30rem;
+
+    @include small-tablet {
+      margin-top: 70rem;
+    }
+
+    @include large-mobile {
+      margin-top: 40rem;
+      margin-bottom: 40rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 40rem;
+    font-size: 12rem;
+
+    &-wrap {
+      display: none;
+      margin-top: 20rem;
+    }
+
+    @include large-mobile {
+      &-wrap {
+        display: block;
+      }
+    }
+  }
+}

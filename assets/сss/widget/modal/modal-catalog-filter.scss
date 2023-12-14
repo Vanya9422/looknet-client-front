@@ -1,0 +1,155 @@
+.modal-catalog-filter {
+  .modal-content {
+    padding: 25px 20px;
+    height: calc(70vh + 50px);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    padding-bottom: 25px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: #E6E6EA;
+      left: 0;
+      bottom: 0;
+    }
+
+    &-close {
+      position: absolute;
+      left: 0;
+      color: $dark-gray;
+
+      svg {
+        width: 12px;
+        height: 12px;
+        stroke: $dark-gray;
+      }
+    }
+
+    &-back {
+      position: absolute;
+      left: 0;
+      color: $dark-gray;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        stroke: $dark-gray;
+      }
+    }
+
+    &-title {
+      color: $default;
+    }
+
+    &-reset {
+      position: absolute;
+      right: 0;
+      color: $red;
+
+      svg {
+        width: 12px;
+        height: 12px;
+        fill: $red;
+      }
+    }
+  }
+  &__footer{
+    border-top: 0;
+    padding: 0;
+  }
+  &__body{
+    height: calc(70vh - 78px - 40px);
+    overflow-y: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__item {
+    padding: 32px 0 20px;
+    border-bottom: 1px solid #E6E6EA;
+    align-items: center;
+    justify-content: space-between;
+
+    &-arrow {
+
+    }
+
+    &-svg {
+      width: 16px;
+      height: 16px;
+      transform: rotate(180deg);
+      stroke: #9A9A9A;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: $default;
+  }
+  &__sub-title{
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #9A9A9A;
+    margin-top: 10px;
+    //min-height: 10px;
+  }
+
+  &__fields {
+    margin-top: 20px;
+    display: flex;
+
+    .input.is-separator:first-child .input__field {
+      border-radius: 10rem 0 0 10rem;
+      border-left-width: 1px;
+      border-right-width: 0;
+    }
+
+    .input.is-separator:last-child .input__field {
+      border-radius: 0 10rem 10rem 0;
+      border-right-width: 1px;
+      border-left-width: 0;
+    }
+
+    .input.is-separator:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 1px;
+      height: 30rem;
+      background: #D2D2D7;
+      margin-top: -15rem;
+    }
+  }
+  .accordion-filter__list,
+  .accordion-filter__item{
+    padding-left: 0;
+  }
+  .accordion-filter__head{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 30px;
+  }
+}
+.section-catalog__row{
+  //overflow-x: hidden;
+  //min-height: 300px;
+}

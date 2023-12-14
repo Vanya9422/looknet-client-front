@@ -1,0 +1,32 @@
+@import "header";
+@import "favorites-ad";
+
+//section
+@import "section/section-categories";
+@import "section/section-search";
+@import "section/section-contacts";
+
+//item
+@import "item/item-contact";
+@import "item/item-annoucement";
+@import "item/item-tariff";
+
+//parts
+@import "part/annoucements";
+@import "part/annoucement-panel";
+@import "part/analytics-box";
+@import "part/statistic";
+
+//modal
+@import "modal/modal-tariffs";
+@import "modal/modal-catalog-filter";
+.profile-box .user-info__name {
+  margin: 0 auto;
+}
+
+.settings .user-info__name {
+  @include large-tablet {
+    margin: 0;
+
+  }
+}
